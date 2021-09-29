@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable( CPP main.cpp )
 
-add_executable( CPP1 01Stack/stack.cpp)
+add_executable( CPP1 01stack/stack.cpp)
 
 #add_executable( CPP2 queue.cpp )
 #
