@@ -132,7 +132,7 @@ void Stack :: display() {
 
         if( iter > 0 ) {
 
-           cout << S[iter] << " << ";
+           cout << S[iter] << " >> ";
 
         }
 

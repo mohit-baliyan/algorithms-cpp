@@ -66,9 +66,11 @@ void Queue ::enqueue( int data ) {
 
     }
 
-    // pre-increment rear and store data at rear index
+    // pre-increment rear and apply modulus to resize according to queue size and store data at rear index
 
-    Q[++rear] = data;
+    rear = ( rear + 1 ) % capacity;
+
+    Q[rear] = data;
 
 }
 
@@ -96,11 +98,11 @@ int Queue :: dequeue() {
 
     }
 
-    // else increase front
+        // else increase front
 
     else {
 
-        front++;
+        front = ( front + 1 ) % capacity;
 
     }
 
@@ -120,31 +122,19 @@ bool Queue ::isFull() {
 
     // if rear is at last index of queue
 
-    return capacity == rear + 1;
+    return ( ( rear + 1 ) % capacity ) == front;
 
 }
 
 void Queue ::display() {
 
-    for( int i = front; i <= rear; i++ ) {
+    for( int i = front; i != rear; i = ( i + 1 ) % capacity  ) {
 
-        // print elements till second last
-
-        if( i < rear ) {
-
-            cout << Q[i] << ">>";
-
-        }
-
-        // print last element
-
-        else {
-
-            cout << Q[i] << endl;
-
-        }
+        cout << Q[i] << ">>";
 
     }
+
+    cout << Q[rear] << endl;
 
 }
 
@@ -176,21 +166,15 @@ int main() {
 
     cout << "Dequeue : " << obj.dequeue() << endl;
 
-    // enqueue will be failed again due to non empty linear queue structure
-
     obj.enqueue( 40 );
 
-    // dequeue all    -- perform dequeue 2 times
+    // enqueue will be fail
+
+    obj.enqueue( 50 );
+
+    // dequeue once to make space to enqueue 50
 
     cout << "Dequeue : " << obj.dequeue() << endl;
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    // now dequeue will be failed again
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    // perform enqueue
 
     obj.enqueue( 50 );
 
