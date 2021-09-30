@@ -8,8 +8,8 @@ add_executable( CPP main.cpp )
 
 add_executable( CPP1 01stack/stack.cpp)
 
-#add_executable( CPP2 queue.cpp )
-#
+add_executable( CPP2 02queue/01queue.cpp)
+
 #add_executable( CPP3 circular_queue.cpp )
 #
 #add_executable( CPP4 quadratic_sorting.cpp )
