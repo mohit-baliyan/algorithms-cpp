@@ -1,43 +1,8 @@
 # include <iostream>
 
+# include "stack.h"
+
 using namespace std;
-
-// define class Stack
-
-class Stack {
-
-public :
-
-    // declare constructor
-
-    Stack( int );
-
-
-    // declare necessary variable and array to store Stack data structure
-
-    int top;
-
-    int capacity;
-
-    int *S;
-
-    // declare class methods
-
-    void push( int );
-
-    int pop();
-
-    bool isEmpty();
-
-    bool isFull();
-
-    int peek();
-
-    void display();
-
-};
-
-
 
 // constructor definition
 
@@ -51,10 +16,9 @@ Stack :: Stack( int size ) {
 
 }
 
-
 // methods definition
 
-void Stack :: push( int data ) {
+bool Stack :: push( int data ) {
 
     // Is stack full ?
 
@@ -62,13 +26,15 @@ void Stack :: push( int data ) {
 
         cout << "Stack Overflow" << endl;
 
-        return;
+        return false;
 
     }
 
     // increment top and push element at location top in stack
 
     S[++top] = data;
+
+    return true;
 
 }
 
@@ -78,7 +44,7 @@ int Stack :: pop() {
 
     if( isEmpty() ) {
 
-        cout << "Stack Underflow";
+        cout << "Stack Underflow" << endl;
 
         return -1;
 
@@ -108,6 +74,12 @@ bool Stack :: isFull() {
 
 int Stack :: peek() {
 
+    if( isEmpty() ) {
+
+        return -1;
+
+    }
+
     // return element at top
 
     return S[top];
@@ -130,45 +102,10 @@ void Stack :: display() {
 
     for( int iter = top; iter > -1; iter-- ) {
 
-        if( iter > 0 ) {
-
-           cout << S[iter] << ">>";
-
-        }
-
-        else {
-
-            cout << S[iter] << endl;
-
-        }
+        cout << S[iter] << " ";
 
     }
 
-}
-
-
-int main() {
-
-    Stack obj( 3 );
-
-    cout << "Pop operation : " << obj.pop() << endl;
-
-    obj.push( 1 );
-
-    obj.push( 2);
-
-    obj.push( 3);
-
-    obj.push( 4);
-
-    cout << "Top : " << obj.peek() << endl;
-
-    cout << "Pop operation : " << obj.pop() << endl;
-
-    obj.push( 4 );
-
-    obj.display();
-
-    return 0;
+    cout << endl;
 
 }
