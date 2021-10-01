@@ -15,15 +15,17 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 
-
+# generic function to add executable target along with test files
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+function( create_executable )
+    add_executable( ${ARGV0} ${ARGV1}.cpp )
+    add_executable( ${ARGV0}-test ${ARGV1}-test.cpp )
+    target_link_libraries( ${ARGV0}-test gtest_main )
+    add_test( NAME ${ARGV0}-test COMMAND ${ARGV0}-test )
+endfunction()
 
 
-# stack
-add_executable( stack 01stack/stack.cpp)
-add_executable( stack-test 01stack/stack-test.cpp)
-target_link_libraries( stack-test gtest_main )
-add_test( NAME stack-test COMMAND stack-test )
+create_executable(stack 01stack/stack)
 
 
 
