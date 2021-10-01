@@ -1,3 +1,5 @@
+include(FetchContent)
+
 cmake_minimum_required(VERSION 3.20)
 
 project( CPP )
@@ -12,8 +14,9 @@ add_executable( CPP2 02queue/01queue.cpp)
 
 add_executable( CPP3 02queue/02circular_queue.cpp )
 
-#add_executable( CPP4 quadratic_sorting.cpp )
-#
-#add_executable( CPP5 linkedlist.cpp )
-#
-#add_executable( CPP6 doublylinkedlist .cpp )
+add_executable( CPP4 03linked-list/01singly_linked_list.cpp )
+
+add_executable( CPP5 03linked-list/02doubly_linked_list.cpp )
+
+# add_executable( CPP6 03linked-list/03circular_linked_list.cpp )
+
