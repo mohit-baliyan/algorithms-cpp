@@ -25,7 +25,9 @@ function( create_executable )
 endfunction()
 
 
-create_executable(stack 01stack/stack)
+create_executable( stack 01stack/stack )
+
+create_executable( queue 02queue/01queue )
 
 
 

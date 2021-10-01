@@ -1,36 +1,8 @@
 # include <iostream>
 
+# include "01queue.h"
+
 using namespace std;
-
-// define Queue class to declare queue data structure
-
-class Queue {
-
-    // declare constructor and variables
-
-public :
-
-    Queue( int );
-
-    int capacity;
-
-    int rear;
-
-    int front;
-
-    int *Q;
-
-    void enqueue( int );
-
-    int dequeue();
-
-    bool isFull();
-
-    bool isEmpty();
-
-    void display();
-
-};
 
 // constructor to initialize variables
 
@@ -46,7 +18,7 @@ Queue :: Queue( int size ) {
 
 }
 
-void Queue ::enqueue( int data ) {
+bool Queue ::enqueue( int data ) {
 
     // if queue is full return
 
@@ -54,7 +26,7 @@ void Queue ::enqueue( int data ) {
 
         cout << "Queue is full" << endl;
 
-        return;
+        return false;
 
     }
 
@@ -69,6 +41,8 @@ void Queue ::enqueue( int data ) {
     // pre-increment rear and store data at rear index
 
     Q[++rear] = data;
+
+    return true;
 
 }
 
@@ -145,57 +119,5 @@ void Queue ::display() {
         }
 
     }
-
-}
-
-
-
-int main() {
-
-    // initialize queue object and pass size 3
-
-    Queue obj( 3 );
-
-    // perform dequeue on empty queue
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    // perform enqueue ( capacity + 1 ) times
-
-    obj.enqueue( 10 );
-
-    obj.enqueue( 20 );
-
-    obj.enqueue( 30 );
-
-    // ( capacity + 1 )th will be fail
-
-    obj.enqueue( 40 );
-
-    // dequeue once to make space to enqueue 40
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    // enqueue will be failed again due to non empty linear queue structure
-
-    obj.enqueue( 40 );
-
-    // dequeue all    -- perform dequeue 2 times
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    // now dequeue will be failed again
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    // perform enqueue
-
-    obj.enqueue( 50 );
-
-    obj.display();
-
-    return 0;
 
 }
