@@ -1,40 +1,12 @@
 # include <iostream>
 
+# include "02circular-queue.h"
+
 using namespace std;
-
-// define Queue class to declare queue data structure
-
-class Queue {
-
-    // declare constructor and variables
-
-public :
-
-    Queue( int );
-
-    int capacity;
-
-    int rear;
-
-    int front;
-
-    int *Q;
-
-    void enqueue( int );
-
-    int dequeue();
-
-    bool isFull();
-
-    bool isEmpty();
-
-    void display();
-
-};
 
 // constructor to initialize variables
 
-Queue :: Queue( int size ) {
+CircularQueue ::CircularQueue( int size ) {
 
     capacity = size;
 
@@ -46,7 +18,7 @@ Queue :: Queue( int size ) {
 
 }
 
-void Queue ::enqueue( int data ) {
+bool CircularQueue ::enqueue( int data ) {
 
     // if queue is full return
 
@@ -54,7 +26,7 @@ void Queue ::enqueue( int data ) {
 
         cout << "Queue is full" << endl;
 
-        return;
+        return false;
 
     }
 
@@ -72,9 +44,11 @@ void Queue ::enqueue( int data ) {
 
     Q[rear] = data;
 
+    return true;
+
 }
 
-int Queue :: dequeue() {
+int CircularQueue :: dequeue() {
 
     // if queue is empty return -1
 
@@ -112,13 +86,13 @@ int Queue :: dequeue() {
 
 }
 
-bool Queue ::isEmpty() {
+bool CircularQueue ::isEmpty() {
 
     return front == -1;
 
 }
 
-bool Queue ::isFull() {
+bool CircularQueue ::isFull() {
 
     // if rear is at last index of queue
 
@@ -126,7 +100,7 @@ bool Queue ::isFull() {
 
 }
 
-void Queue ::display() {
+void CircularQueue ::display() {
 
     for( int i = front; i != rear; i = ( i + 1 ) % capacity  ) {
 
@@ -135,51 +109,5 @@ void Queue ::display() {
     }
 
     cout << Q[rear] << endl;
-
-}
-
-
-
-int main() {
-
-    // initialize queue object and pass size 3
-
-    Queue obj( 3 );
-
-    // perform dequeue on empty queue
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    // perform enqueue ( capacity + 1 ) times
-
-    obj.enqueue( 10 );
-
-    obj.enqueue( 20 );
-
-    obj.enqueue( 30 );
-
-    // ( capacity + 1 )th will be fail
-
-    obj.enqueue( 40 );
-
-    // dequeue once to make space to enqueue 40
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    obj.enqueue( 40 );
-
-    // enqueue will be fail
-
-    obj.enqueue( 50 );
-
-    // dequeue once to make space to enqueue 50
-
-    cout << "Dequeue : " << obj.dequeue() << endl;
-
-    obj.enqueue( 50 );
-
-    obj.display();
-
-    return 0;
 
 }

@@ -3,6 +3,7 @@ project( algorithms-cpp )
 set(CMAKE_CXX_STANDARD 14)
 
 
+
 # include unit test framework
 include(FetchContent)
 FetchContent_Declare(
@@ -15,6 +16,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 
+
 # generic function to add executable target along with test files
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 function( create_executable )
@@ -25,17 +27,14 @@ function( create_executable )
 endfunction()
 
 
-create_executable( stack 01stack/stack )
+
+create_executable( stack 01stack/01stack )
 
 create_executable( queue 02queue/01queue )
 
+create_executable( circular-queue 02queue/02circular-queue )
 
 
-
-#add_executable( CPP2 02queue/01queue.cpp)
-#
-#add_executable( CPP3 02queue/02circular_queue.cpp )
-#
 #add_executable( CPP4 03linked-list/01singly_linked_list.cpp )
 #
 #add_executable( CPP5 03linked-list/02doubly_linked_list.cpp )
