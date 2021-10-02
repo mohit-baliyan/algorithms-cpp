@@ -1,22 +1,8 @@
+# include "02doubly-linked-list.h"
+
 # include <iostream>
 
 using namespace std;
-
-// Node class to define object having integer data and pointer
-
-class Node {
-
-public :
-
-    int data;
-
-    Node * next;
-
-    Node * prev;
-
-    Node( int );
-
-};
 
 // constructor of class Node
 
@@ -30,31 +16,10 @@ Node :: Node( int value ) {
 
 }
 
-// LinkedList class for define LinkedList structure
-
-class LinkedList {
-
-public :
-
-    Node * head;
-
-    LinkedList();
-
-    void addLast( int );
-
-    void addFirst( int );
-
-    Node* deleteFirst();
-
-    Node* deleteLast();
-
-    void display();
-
-};
 
 // constructor for LinkedList class
 
-LinkedList :: LinkedList() {
+DoublyLinkedList ::DoublyLinkedList() {
 
     head = NULL;
 
@@ -62,7 +27,7 @@ LinkedList :: LinkedList() {
 
 // add node at tail
 
-void LinkedList :: addLast( int value ) {
+void DoublyLinkedList :: addLast( int value ) {
 
     Node * node = new Node( value );
 
@@ -90,9 +55,10 @@ void LinkedList :: addLast( int value ) {
 
 }
 
+
 // add node at head
 
-void LinkedList ::addFirst( int value ) {
+void DoublyLinkedList ::addFirst( int value ) {
 
     Node * node = new Node( value );
 
@@ -110,7 +76,7 @@ void LinkedList ::addFirst( int value ) {
 
 // delete at head and update head
 
-Node * LinkedList :: deleteFirst()  {
+Node * DoublyLinkedList :: deleteFirst()  {
 
     head = ( head->next != NULL ) ? ( head->next ) : NULL;
 
@@ -126,11 +92,11 @@ Node * LinkedList :: deleteFirst()  {
 
 // delete at tail and return head
 
-Node * LinkedList ::deleteLast() {
+Node * DoublyLinkedList ::deleteLast() {
 
     if( head == NULL || head->next == NULL ) {
 
-        return NULL;
+        head = NULL;
 
     }
 
@@ -146,14 +112,22 @@ Node * LinkedList ::deleteLast() {
 
         iter->next = NULL;
 
-        return head;
-
     }
+
+    return head;
 
 }
 
 
-void LinkedList ::display() {
+void DoublyLinkedList ::display() {
+
+    if( head == NULL ) {
+
+        cout << "Empty Doubly LinkedList" << endl;
+
+        return;
+
+    }
 
     Node * iter = head;
 
@@ -166,40 +140,5 @@ void LinkedList ::display() {
     }
 
     cout << endl;
-
-}
-
-
-int main() {
-
-    LinkedList obj;
-
-    obj.addFirst( 10 );
-
-    obj.addFirst( 20 );
-
-    obj.addFirst( 30 );
-
-    obj.addLast( 40);
-
-    obj.addLast( 50);
-
-    obj.display();
-
-    cout  << obj.deleteFirst() << endl;
-
-    cout << obj.deleteLast() << endl;
-
-    cout  << obj.deleteFirst() << endl;
-
-    cout << obj.deleteLast() << endl;
-
-    cout  << obj.deleteFirst() << endl;
-
-    cout << obj.deleteLast() << endl;
-
-    obj.display();
-
-    return 0;
 
 }

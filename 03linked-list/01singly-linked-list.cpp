@@ -1,20 +1,8 @@
 # include <iostream>
 
+# include "01singly-linked-list.h"
+
 using namespace std;
-
-// Node class to define object having integer data and pointer
-
-class Node {
-
-public :
-
-    int data;
-
-    Node * next;
-
-    Node( int );
-
-};
 
 // constructor of class Node
 
@@ -25,28 +13,6 @@ Node :: Node( int value ) {
     next = NULL;
 
 }
-
-// LinkedList class for define LinkedList structure
-
-class LinkedList {
-
-public :
-
-    Node * head;
-
-    LinkedList();
-
-    void addLast( int );
-
-    void addFirst( int );
-
-    Node* deleteFirst();
-
-    Node* deleteLast();
-
-    void display();
-
-};
 
 // constructor for LinkedList class
 
@@ -112,7 +78,7 @@ Node * LinkedList ::deleteLast() {
 
     if( head == NULL || head->next == NULL ) {
 
-        return NULL;
+        head = NULL;
 
     }
 
@@ -128,14 +94,20 @@ Node * LinkedList ::deleteLast() {
 
         iter->next = NULL;
 
-        return head;
-
     }
+
+    return head;
 
 }
 
 
 void LinkedList ::display() {
+
+    if( head == NULL ) {
+
+        cout << "Empty LinkedList" << endl;
+
+    }
 
     Node * iter = head;
 
@@ -148,40 +120,5 @@ void LinkedList ::display() {
     }
 
     cout << endl;
-
-}
-
-
-int main() {
-
-    LinkedList obj;
-
-    obj.addFirst( 10 );
-
-    obj.addFirst( 20 );
-
-    obj.addFirst( 30 );
-
-    obj.addLast( 40);
-
-    obj.addLast( 50);
-
-    obj.display();
-
-    cout  << obj.deleteFirst() << endl;
-
-    cout << obj.deleteLast() << endl;
-
-    cout  << obj.deleteFirst() << endl;
-
-    cout << obj.deleteLast() << endl;
-
-    cout  << obj.deleteFirst() << endl;
-
-    cout << obj.deleteLast() << endl;
-
-    obj.display();
-
-    return 0;
 
 }

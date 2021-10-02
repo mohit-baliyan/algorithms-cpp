@@ -34,7 +34,6 @@ create_executable( queue 02queue/01queue )
 
 create_executable( circular-queue 02queue/02circular-queue )
 
+create_executable( singly-linked-list 03linked-list/01singly-linked-list )
 
-#add_executable( CPP4 03linked-list/01singly_linked_list.cpp )
-#
-#add_executable( CPP5 03linked-list/02doubly_linked_list.cpp )
+create_executable( double-linked-list 03linked-list/02doubly-linked-list )
