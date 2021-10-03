@@ -1,39 +1,35 @@
-#ifndef DATE_H
-#define DATE_H
+#ifndef DOUBLY_LINKED_LIST
+#define DOUBLY_LINKED_LIST
 
 // Node class to define object having integer data and pointer
-
 class Node {
 
 public :
 
     int data;
+    Node *next;
+    Node *prev;
 
-    Node * next;
-
-    Node * prev;
-
-    Node( int );
+    Node(int);
 
 };
 
 // LinkedList class for define LinkedList structure
-
 class DoublyLinkedList {
 
 public :
 
-    Node * head;
+    Node *head;
 
     DoublyLinkedList();
 
-    void addLast( int );
+    void addLast(int);
 
-    void addFirst( int );
+    void addFirst(int);
 
-    Node* deleteFirst();
+    Node *deleteFirst();
 
-    Node* deleteLast();
+    Node *deleteLast();
 
     void display();
 

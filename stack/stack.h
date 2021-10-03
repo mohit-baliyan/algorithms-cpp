@@ -1,26 +1,21 @@
-#ifndef DATE_H
-#define DATE_H
+#ifndef STACK
+#define STACK
 
 class Stack {
 
 public :
 
     // declare constructor
-
-    Stack( int );
+    Stack(int);
 
 
     // declare necessary variable and array to store Stack data structure
-
     int top;
-
     int capacity;
-
     int *S;
 
     // declare class methods
-
-    bool push( int );
+    bool push(int);
 
     int pop();
 

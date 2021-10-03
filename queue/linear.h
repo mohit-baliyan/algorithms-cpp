@@ -1,23 +1,20 @@
-#ifndef DATE_H
-#define DATE_H
+#ifndef LINEAR_QUEUE
+#define LINEAR_QUEUE
 
-class CircularQueue {
+class Queue {
 
-    // declare constructor and variables
-
+    // declare constructor, variables and member functions
 public :
 
-    CircularQueue( int );
+    Queue(int);
 
     int capacity;
-
     int rear;
-
     int front;
 
     int *Q;
 
-    bool enqueue( int );
+    bool enqueue(int);
 
     int dequeue();
 
