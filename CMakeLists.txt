@@ -34,3 +34,5 @@ create_executable( circular-queue queue/circular )
 create_executable( singly-linked-list linked-list/singly )
 
 create_executable( double-linked-list linked-list/doubly )
+
+create_executable( circular-linked-list linked-list/circular )
