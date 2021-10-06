@@ -3,7 +3,7 @@
 
 class Queue {
 
-    // declare constructor, variables and member functions
+    // declare constructor, variables and operations for Queue data structure
 public :
 
     Queue(int);
@@ -11,7 +11,6 @@ public :
     int capacity;
     int rear;
     int front;
-
     int *Q;
 
     bool enqueue(int);

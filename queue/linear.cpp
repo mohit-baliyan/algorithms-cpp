@@ -77,16 +77,7 @@ void Queue::display() {
 
     for (int i = front; i <= rear; i++) {
 
-        // print elements till second last
-        if (i < rear) {
-            cout << Q[i] << ">>";
-        }
-
-            // print last element
-        else {
-            cout << Q[i] << endl;
-
-        }
+        cout << Q[i] << ">>";
 
     }
 

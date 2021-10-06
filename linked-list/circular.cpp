@@ -27,6 +27,7 @@ void Circular::add(int data) {
     if (head == NULL) {
         node->next = node;
         head = node;
+        return;
     }
 
     Node *iter = head;

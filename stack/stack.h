@@ -8,13 +8,12 @@ public :
     // declare constructor
     Stack(int);
 
-
     // declare necessary variable and array to store Stack data structure
     int top;
     int capacity;
     int *S;
 
-    // declare class methods
+    // declare operations
     bool push(int);
 
     int pop();

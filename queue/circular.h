@@ -3,7 +3,7 @@
 
 class CircularQueue {
 
-    // declare constructor, variables and member functions
+    // declare constructor, variables and operations for Circular data structure
 public :
 
     CircularQueue(int);

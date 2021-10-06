@@ -27,9 +27,7 @@ void LinkedList::addLast(int value) {
 
     if (head == NULL) {
         head = node;
-    }
-
-    else {
+    } else {
 
         Node *iter = head;
         while (iter->next != NULL) {
