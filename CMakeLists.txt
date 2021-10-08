@@ -24,6 +24,7 @@ function(create_executable)
     add_test(NAME ${ARGV0}-test COMMAND ${ARGV0}-test)
 endfunction()
 
+create_executable( linear-search search/linear )
 
 create_executable(stack stack/stack)
 
