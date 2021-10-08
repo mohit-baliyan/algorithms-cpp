@@ -26,6 +26,8 @@ endfunction()
 
 create_executable( linear-search search/linear )
 
+create_executable( binary-search search/binary )
+
 create_executable(stack stack/stack)
 
 create_executable( queue queue/linear )

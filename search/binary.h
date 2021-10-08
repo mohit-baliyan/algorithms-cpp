@@ -1,7 +1,7 @@
-#ifndef LINEAR_SEARCH
-#define LINEAR_SEARCH
+#ifndef BINARY_SEARCH
+#define BINARY_SEARCH
 
-class LinearSearch {
+class BinarySearch {
 
 public:
 
