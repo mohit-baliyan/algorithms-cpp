@@ -30,11 +30,11 @@ create_executable( binary-search search/binary )
 
 create_executable( insertion quadratic-sort/insertion )
 
-# create_executable( selection quadratic-sort/selection )
+create_executable( selection quadratic-sort/selection )
 
-# create_executable( selection quadratic-sort/bubble )
+create_executable( bubble quadratic-sort/bubble )
 
-# create_executable(stack stack/stack)
+create_executable(stack stack/stack)
 
 create_executable( queue queue/linear )
 
