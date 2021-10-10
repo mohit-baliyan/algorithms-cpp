@@ -45,3 +45,5 @@ create_executable( singly-linked-list linked-list/singly )
 create_executable( double-linked-list linked-list/doubly )
 
 create_executable( circular-linked-list linked-list/circular )
+
+create_executable( binary-search-tree tree/bst )
