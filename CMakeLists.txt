@@ -24,26 +24,26 @@ function(create_executable)
     add_test(NAME ${ARGV0}-test COMMAND ${ARGV0}-test)
 endfunction()
 
-create_executable( linear-search search/linear )
+create_executable(linear-search search/linear)
 
-create_executable( binary-search search/binary )
+create_executable(binary-search search/binary)
 
-create_executable( insertion quadratic-sort/insertion )
+create_executable(insertion quadratic-sort/insertion)
 
-create_executable( selection quadratic-sort/selection )
+create_executable(selection quadratic-sort/selection)
 
-create_executable( bubble quadratic-sort/bubble )
+create_executable(bubble quadratic-sort/bubble)
 
 create_executable(stack stack/stack)
 
-create_executable( queue queue/linear )
+create_executable(queue queue/linear)
 
-create_executable( circular-queue queue/circular )
+create_executable(circular-queue queue/circular)
 
-create_executable( singly-linked-list linked-list/singly )
+create_executable(singly-linked-list linked-list/singly)
 
-create_executable( double-linked-list linked-list/doubly )
+create_executable(double-linked-list linked-list/doubly)
 
-create_executable( circular-linked-list linked-list/circular )
+create_executable(circular-linked-list linked-list/circular)
 
-create_executable( binary-search-tree tree/bst )
+create_executable(binary-search-tree tree/bst)
