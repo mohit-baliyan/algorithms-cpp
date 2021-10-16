@@ -42,6 +42,8 @@ public:
 
     Node *deleteNode(Node *, int);
 
+    bool IsBST(Node *);
+
 };
 
 #endif

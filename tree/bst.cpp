@@ -146,3 +146,21 @@ Node *BST::deleteNode(Node *root, int item) {
     return root;
 
 }
+
+bool BST :: IsBST(Node * root){
+
+    if(root==NULL){
+        return true;
+    }
+
+    if(root->left!=NULL && root->data <= BST ::maximum(root->left) ){
+        return false;
+    }
+
+    if(root->right!=NULL && root->data >= BST ::minimum(root->right)){
+        return false;
+    }
+
+    return IsBST(root->left) && IsBST(root->right);
+
+}
