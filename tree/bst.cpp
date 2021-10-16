@@ -89,3 +89,60 @@ int BST::height(Node *root) {
     return max(height(root->left), height(root->right)) + 1;
 
 }
+
+Node *BST::minimumNode(Node *root) {
+
+    while (root->left != NULL) {
+        root = root->left;
+    }
+    return root;
+
+}
+
+Node *BST::deleteNode(Node *root, int item) {
+
+    if (root == NULL) {
+        return NULL;
+    }
+
+    else if (root->data > item) {
+        root->left = deleteNode(root->left, item);
+    }
+
+    else if (root->data < item) {
+        root->right = deleteNode(root->right, item);
+    }
+
+    else {
+
+        if (root->left == NULL && root->right == NULL){
+            root = NULL;
+            delete root;
+        }
+
+        else if (root->left != NULL){
+            Node *store = root->left;
+            root = NULL;
+            delete root;
+            root = store;
+        }
+
+        else if (root->right != NULL){
+            Node *store = root->right;
+            root = NULL;
+            delete root;
+            root = store;
+        }
+
+        else {
+            Node * store = BST :: minimumNode(root->right);
+            root->data = store->data;
+            deleteNode(root->right, store->data);
+        }
+
+
+    }
+
+    return root;
+
+}

@@ -20,10 +20,16 @@ TEST(MyTestSuitName, MyTestCaseName) {
     cout << endl;
     obj.postorder(root);
 
+    cout << endl;
+
     ASSERT_EQ(3, obj.height(root)) << "Height of above bst should be equal to 4";
 
     ASSERT_EQ(20, obj.maximum(root)) << "Maximum element in above bst should be equal to 20";
 
     ASSERT_EQ(5, obj.minimum(root)) << "Minimum element in above bst should be equal to 5";
+
+    root = obj.deleteNode(root, 15);
+    obj.inorder(root);
+
 
 }

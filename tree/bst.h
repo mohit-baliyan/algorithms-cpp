@@ -30,6 +30,8 @@ public:
 
     int minimum(Node *);
 
+    Node* minimumNode(Node *);
+
     int height(Node *);
 
     void inorder(Node *);
@@ -37,6 +39,8 @@ public:
     void preorder(Node *);
 
     void postorder(Node *);
+
+    Node *deleteNode(Node *, int);
 
 };
 
