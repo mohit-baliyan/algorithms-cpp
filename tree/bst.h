@@ -1,6 +1,8 @@
 #ifndef BINARY_SEARCH_TREE
 #define BINARY_SEARCH_TREE
 
+using namespace std;
+
 // declare Node to store object with int, left and right pointers
 class Node {
 
@@ -30,7 +32,7 @@ public:
 
     int minimum(Node *);
 
-    Node* minimumNode(Node *);
+    Node *minimumNode(Node *);
 
     int height(Node *);
 
@@ -42,7 +44,7 @@ public:
 
     Node *deleteNode(Node *, int);
 
-    bool IsBST(Node *);
+    bool IsBST(Node *, Node *, Node *);
 
 };
 

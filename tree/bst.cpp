@@ -1,5 +1,6 @@
 #include "bst.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -103,39 +104,27 @@ Node *BST::deleteNode(Node *root, int item) {
 
     if (root == NULL) {
         return NULL;
-    }
-
-    else if (root->data > item) {
+    } else if (root->data > item) {
         root->left = deleteNode(root->left, item);
-    }
-
-    else if (root->data < item) {
+    } else if (root->data < item) {
         root->right = deleteNode(root->right, item);
-    }
+    } else {
 
-    else {
-
-        if (root->left == NULL && root->right == NULL){
+        if (root->left == NULL && root->right == NULL) {
             root = NULL;
             delete root;
-        }
-
-        else if (root->left != NULL){
+        } else if (root->left != NULL) {
             Node *store = root->left;
             root = NULL;
             delete root;
             root = store;
-        }
-
-        else if (root->right != NULL){
+        } else if (root->right != NULL) {
             Node *store = root->right;
             root = NULL;
             delete root;
             root = store;
-        }
-
-        else {
-            Node * store = BST :: minimumNode(root->right);
+        } else {
+            Node *store = BST::minimumNode(root->right);
             root->data = store->data;
             deleteNode(root->right, store->data);
         }
@@ -147,20 +136,21 @@ Node *BST::deleteNode(Node *root, int item) {
 
 }
 
-bool BST :: IsBST(Node * root){
+bool BST::IsBST(Node *root, Node *l, Node *r) {
 
-    if(root==NULL){
+    if (root == NULL) {
         return true;
     }
 
-    if(root->left!=NULL && root->data <= BST ::maximum(root->left) ){
+    if (l != NULL && l->data >= root->data) {
         return false;
     }
 
-    if(root->right!=NULL && root->data >= BST ::minimum(root->right)){
+    if (r != NULL && r->data <= root->data) {
         return false;
     }
 
-    return IsBST(root->left) && IsBST(root->right);
+    return IsBST(root->left, l, root) && IsBST(root->right, root, r);
+
 
 }
