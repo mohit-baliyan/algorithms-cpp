@@ -154,3 +154,45 @@ bool BST::IsBST(Node *root, Node *l, Node *r) {
 
 
 }
+
+void BST::storeBST(Node *root, std::vector<Node *> &nodes) {
+
+    if (root == NULL) {
+        return;
+    }
+
+    storeBST(root->left, nodes);
+    nodes.push_back(root);
+    storeBST(root->right, nodes);
+
+}
+
+Node *BST::buildBalance(Node *root) {
+
+    if (root == NULL) {
+        return NULL;
+    }
+
+    vector<Node *> nodes;
+    storeBST(root, nodes);
+    int size = nodes.size();
+
+    return buildBalanceHelper(nodes, 0, size - 1);
+
+}
+
+Node *BST::buildBalanceHelper(std::vector<Node *> &nodes, int beg, int end) {
+
+    if (beg > end) {
+        return NULL;
+    }
+
+    int mid = (beg + end) / 2;
+    Node *root = nodes[mid];
+
+    root->left = buildBalanceHelper(nodes, beg, mid - 1);
+    root->right = buildBalanceHelper(nodes, mid + 1, end);
+
+    return root;
+
+}

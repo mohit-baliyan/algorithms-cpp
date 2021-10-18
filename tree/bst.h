@@ -1,7 +1,7 @@
 #ifndef BINARY_SEARCH_TREE
 #define BINARY_SEARCH_TREE
 
-using namespace std;
+#include <vector>
 
 // declare Node to store object with int, left and right pointers
 class Node {
@@ -45,6 +45,12 @@ public:
     Node *deleteNode(Node *, int);
 
     bool IsBST(Node *, Node *, Node *);
+
+    void storeBST(Node *, std::vector<Node *> & );
+
+    Node *buildBalance(Node *root);
+
+    Node *buildBalanceHelper(std::vector<Node *> &, int beg, int end);
 
 };
 

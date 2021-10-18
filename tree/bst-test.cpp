@@ -31,5 +31,12 @@ TEST(MyTestSuitName, MyTestCaseName) {
     root = obj.deleteNode(root, 15);
     obj.inorder(root);
 
+    cout<<endl;
+
+    root = obj.buildBalance(root);
+    obj.preorder(root);
+
+
+
 
 }
