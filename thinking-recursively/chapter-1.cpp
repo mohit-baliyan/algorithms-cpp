@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int collect(int amount, int person, int x){
+int collect(int amount, int person, int c){
 
     // collect itself 1$
     if(amount==1){
@@ -11,10 +11,10 @@ int collect(int amount, int person, int x){
     }
 
     else{
-        x = x + collect(amount/10, person * 10, x);
+        c = c + collect(amount/10, person * 10, c);
     }
 
-    return x;
+    return c;
 
 }
 
