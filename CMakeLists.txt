@@ -50,4 +50,4 @@ create_executable(binary-search-tree tree/bst)
 
 create_executable(binary-tree tree/bt)
 
-add_executable(chapter1 thinking-recursively/chapter-1.cpp)
+add_executable(chapter1 thinking-recursively-solution/chapter-1.cpp)
