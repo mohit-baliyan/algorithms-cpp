@@ -19,7 +19,7 @@ Circular::Circular() {
 
 }
 
-// add node
+// add node to existing circular LinkedList
 void Circular::add(int data) {
 
     Node *node = new Node(data);
