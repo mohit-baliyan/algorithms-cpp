@@ -49,6 +49,3 @@ create_executable(circular-linked-list linked-list/circular)
 create_executable(binary-search-tree tree/bst)
 
 create_executable(binary-tree tree/bt)
-
-create_executable(recursion-backtracking recursion-backtracking/basics)
-
